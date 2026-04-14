@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary_color: var(--primary_color);
+  --color-secondary_color: var(--secondary_color);
+  --color-tertiary_color: var(--tertiary_color);
+  --color-neutral_color: var(--neutral_color);
+  --color-muted_color: var(--muted_color);
+  --color-unmuted_color: var(--unmuted_color);
+  --color-white_btn_color: var(--white_btn_color);
+}
+
+:root {
+  --primary_color: hsl(0, 0%, 3.92%);
+  --secondary_color: hsl(0, 0%, 62.75%);
+  --tertiary_color: hsl(180, 0.42%, 46.47%);
+  --muted_color: hsl(180, 2%, 51%);
+  --unmuted_color: hsl(0, 3.45%, 94.31%);
+  --white_btn_color: hsl(15, 14.29%, 94.51%);
+}
+
+@layer utilities {
+  /* This creates a custom utility class */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 4px; /* Very thin width */
+    height: 4px; /* Very thin height for horizontal scroll */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track invisible */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: var(--color-tertiary_color); /* Use your HSL variable */
+    border-radius: 10px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary_color); /* Darker on hover */
+  }
+}
+
+.primary_btn {
+  padding: 0.4rem;
+  border-radius: 8%;
+  color: var(--muted_color);
+  background-color: var(--white_btn_color);
+}
+
+.secondary_btn {
+  padding: 0.4rem;
+  border-radius: 8%;
+  color: white;
+  border: 1px solid var(--muted_color);
+  font-weight: bold;
+}
+
+.primary_btn:hover,
+.secondary_btn:hover {
+  cursor: pointer;
+}
+
+.nav_items {
+  position: relative;
+  transition: all;
+  transition-duration: 400ms;
+}
+
+.nav_items:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+  transform: translateY(-4px);
+  transition: all;
+  transition-duration: 400ms;
+  color: var(--unmuted_color);
+  text-decoration-color: var(--muted_color);
+}
