@@ -1,5 +1,6 @@
 import { FileDown, Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import Experience from '../Experience/Experience'
+import Projects from '../ProjectsPage/Projects'
 
 const Hero = () => {
   return (
@@ -82,6 +83,7 @@ const Hero = () => {
       </div>
 
       <Experience />
+      <Projects />
     </div>
   )
 }
