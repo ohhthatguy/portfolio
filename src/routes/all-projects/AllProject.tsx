@@ -1,7 +1,7 @@
 import type { projectDataType } from '#/components/ProjectsPage/data/projectData'
 import { projectData } from '#/components/ProjectsPage/data/projectData'
 import { createFileRoute } from '@tanstack/react-router'
-import { GitBranch, Globe } from 'lucide-react'
+import { GitBranch, Globe, Link } from 'lucide-react'
 
 export const Route = createFileRoute('/all-projects/AllProject')({
   component: RouteComponent,
@@ -26,13 +26,40 @@ function RouteComponent() {
               className="border rounded-md px-4  py-4 bg-comp_bg"
               key={index}
             >
-              <div className="border border-muted_color rounded-md h-56 sm:h-86">
+              {/* <div className="border border-muted_color rounded-md h-56 sm:h-86">
                 <img
                   loading="lazy"
                   alt={e.projectName}
                   src={e.projectImg}
                   className="object-cover object-left rounded-md h-full w-full"
                 />
+              </div> */}
+
+              <div className="group relative border overflow-hidden border-muted_color rounded-md h-56 sm:h-86 cursor-pointer">
+                <img
+                  loading="lazy"
+                  alt={e.projectName}
+                  src={e.projectImg}
+                  className="object-cover object-left h-full w-full transition-all duration-1000 
+               group-hover:scale-105 group-hover:blur-sm"
+                />
+
+                <div
+                  className="absolute inset-0 flex items-center justify-center 
+                  bg-black/40 opacity-0 transition-opacity duration-500 
+                  group-hover:opacity-100"
+                >
+                  <a
+                    href={e.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="translate-y-4 transform rounded-full bg-white px-6 py-2 
+                 font-bold text-black transition-transform duration-500 
+                 group-hover:translate-y-0 hover:bg-gray-200 flex gap-2 items-center"
+                  >
+                    <Link size={18} /> Live Link
+                  </a>
+                </div>
               </div>
 
               <div className="grid gap-6 mt-2">
