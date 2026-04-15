@@ -1,4 +1,5 @@
 import Header from '#/components/HomePage/Header'
+import Sidebar from '#/components/HomePage/Sidebar'
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import '../styles.css'
 
@@ -10,7 +11,10 @@ function RootComponent() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="flex overflow-clip ">
+        <Sidebar />
+        <Outlet />
+      </div>
       {/* <Footer /> */}
     </>
   )

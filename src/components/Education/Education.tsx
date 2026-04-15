@@ -4,7 +4,7 @@ import { educationData } from './data/education'
 const Education = () => {
   return (
     <div id="edu_page" className="mt-16 ">
-      <div className="text-[clamp(2.4rem,4vw+0.3rem,5rem)] font-bold ">
+      <div className="text-[clamp(2.4rem,3vw+0.3rem,5rem)] font-bold ">
         EDUCATION{' '}
         <span className="text-2xl font-normal text-muted_color">
           Graduate [in may 2026]

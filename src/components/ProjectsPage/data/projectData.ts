@@ -7,6 +7,8 @@ export type projectDataType = {
   codeLink: string
 }
 
+// the first 4 project should be the project which is shown in the homepage, without click "more"
+
 export const projectData: projectDataType[] = [
   {
     projectName: 'GuideBuddy',
@@ -45,5 +47,25 @@ export const projectData: projectDataType[] = [
     liveLink: 'https://roomkhoji.vercel.app/',
     codeLink: 'https://github.com/ohhthatguy/Room-khoji',
     projectImg: '/project-img/room-khoji.png',
+  },
+
+  {
+    projectName: 'TExpress',
+    projectDesc:
+      ' a web application made to help send password, text snippet or small-sized file from one device to another device using socket.io technology.',
+    techUsed: [
+      'EXPRESS.JS',
+      'REACT.JS',
+      'CLOUDINARY',
+      'SOCKET.IO',
+      'TYPESCRIPT',
+      'ESEWA',
+      'NODE.JS',
+      'DAISY UI',
+      'TAILWIND CSS',
+    ],
+    liveLink: 'https://txpress.vercel.app/',
+    codeLink: 'https://github.com/ohhthatguy/txpress',
+    projectImg: '/project-img/texpress.png',
   },
 ]

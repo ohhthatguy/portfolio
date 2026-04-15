@@ -4,7 +4,7 @@ import { experienceData } from './data/experienceData'
 const Experience = () => {
   return (
     <div id="exp_page" className="mt-16 sm:mt-10 ">
-      <div className="text-[clamp(2.4rem,4vw+0.3rem,5rem)] font-bold ">
+      <div className="text-[clamp(2.4rem,3vw+0.3rem,5rem)] font-bold ">
         EXPERIENCE{' '}
         <span className="text-2xl text-muted_color font-normal">
           ({experienceData.length})

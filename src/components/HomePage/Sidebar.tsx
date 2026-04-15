@@ -1,3 +1,4 @@
+import { useLocation, useNavigate } from '@tanstack/react-router'
 import { CgWebsite } from 'react-icons/cg'
 import { FaGraduationCap, FaHome } from 'react-icons/fa'
 import { IoMdMan } from 'react-icons/io'
@@ -5,13 +6,26 @@ import { IoBagSharp } from 'react-icons/io5'
 import { MdGrade } from 'react-icons/md'
 
 const Sidebar = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const scrollToSection = (
     id: string,
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
+    if (location.pathname !== '/') {
+      navigate({ to: '/' })
+      const element = document.getElementById(id)
+      element?.scrollIntoView({ behavior: 'smooth' })
+      const allNavEle = document.querySelectorAll('.nav_items')
+      allNavEle.forEach((ele) => ele.classList.remove('nav_clicked_class'))
+      e.currentTarget.classList.add('nav_clicked_class')
+    }
+
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+
       const allNavEle = document.querySelectorAll('.nav_items')
       allNavEle.forEach((ele) => ele.classList.remove('nav_clicked_class'))
       e.currentTarget.classList.add('nav_clicked_class')

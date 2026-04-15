@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AllProjectsAllProjectRouteImport } from './routes/all-projects/AllProject'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AllProjectsAllProjectRoute = AllProjectsAllProjectRouteImport.update({
+  id: '/all-projects/AllProject',
+  path: '/all-projects/AllProject',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/all-projects/AllProject': typeof AllProjectsAllProjectRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/all-projects/AllProject': typeof AllProjectsAllProjectRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/all-projects/AllProject': typeof AllProjectsAllProjectRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/all-projects/AllProject'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/all-projects/AllProject'
+  id: '__root__' | '/' | '/all-projects/AllProject'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AllProjectsAllProjectRoute: typeof AllProjectsAllProjectRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/all-projects/AllProject': {
+      id: '/all-projects/AllProject'
+      path: '/all-projects/AllProject'
+      fullPath: '/all-projects/AllProject'
+      preLoaderRoute: typeof AllProjectsAllProjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AllProjectsAllProjectRoute: AllProjectsAllProjectRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
