@@ -17,6 +17,17 @@ export const projectData: projectDataType[] = [
     codeLink: 'https://github.com/ohhthatguy/guide-buddy',
     projectImg: '/project-img/guide-buddy.png',
   },
+
+  {
+    projectName: 'timeline-creator',
+    projectDesc:
+      'An interactive, one-click code copy, timeline templates for project visualization',
+    techUsed: ['REACT.JS', 'TYPESCRIPT', 'TANSTACK ROUTER', 'TAILWIND CSS'],
+    liveLink: 'https://timeline-creator-three.vercel.app/',
+    codeLink: 'https://github.com/ohhthatguy/timeline-creator',
+    projectImg: '/project-img/timeline-creator.png',
+  },
+
   {
     projectName: 'RoomKhoji',
     projectDesc:
@@ -34,14 +45,5 @@ export const projectData: projectDataType[] = [
     liveLink: 'https://roomkhoji.vercel.app/',
     codeLink: 'https://github.com/ohhthatguy/Room-khoji',
     projectImg: '/project-img/room-khoji.png',
-  },
-  {
-    projectName: 'timeline-creator',
-    projectDesc:
-      'An interactive, one-click code copy, timeline templates for project visualization',
-    techUsed: ['REACT.JS', 'TYPESCRIPT', 'TANSTACK ROUTER', 'TAILWIND CSS'],
-    liveLink: 'https://timeline-creator-three.vercel.app/',
-    codeLink: 'https://github.com/ohhthatguy/timeline-creator',
-    projectImg: '/project-img/timeline-creator.png',
   },
 ]

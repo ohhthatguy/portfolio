@@ -3,12 +3,15 @@ import { experienceData } from './data/experienceData'
 
 const Experience = () => {
   return (
-    <div className="mt-16 border border-muted_color">
+    <div id="exp_page" className="mt-16 sm:mt-10 ">
       <div className="text-[clamp(2.4rem,4vw+0.3rem,5rem)] font-bold ">
-        EXPERIENCE
+        EXPERIENCE{' '}
+        <span className="text-2xl text-muted_color font-normal">
+          ({experienceData.length})
+        </span>
       </div>
 
-      <div className=" border relative border-muted_color grid gap-4">
+      <div className="  relative  grid gap-4">
         <div className="h-full absolute border border-muted_color top-0 left-10 sm:left-11"></div>
 
         {experienceData.map((e: experienceDataType, index1: number) => (

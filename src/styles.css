@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --breakpoint-xs: 430px;
   --color-primary_color: var(--primary_color);
   --color-secondary_color: var(--secondary_color);
   --color-tertiary_color: var(--tertiary_color);
@@ -8,15 +9,20 @@
   --color-muted_color: var(--muted_color);
   --color-unmuted_color: var(--unmuted_color);
   --color-white_btn_color: var(--white_btn_color);
+  --color-comp_bg: var(--comp_bg);
 }
 
 :root {
-  --primary_color: hsl(0, 0%, 3.92%);
-  --secondary_color: hsl(0, 0%, 62.75%);
+  /* --primary_color: hsl(0, 0%, 3.92%); */
+  --primary_color: hsl(220, 29.27%, 8.76%);
+  /* --secondary_color: hsl(0, 0%, 62.75%); */
+  --secondary_color: hsl(220, 29.27%, 20.76%);
   --tertiary_color: hsl(180, 0.42%, 46.47%);
   --muted_color: hsl(180, 2%, 51%);
   --unmuted_color: hsl(0, 3.45%, 94.31%);
   --white_btn_color: hsl(15, 14.29%, 94.51%);
+
+  --comp_bg: hsl(0, 0%, 9.67%);
 }
 
 @layer utilities {
@@ -38,6 +44,11 @@
   .scrollbar-custom::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary_color); /* Darker on hover */
   }
+}
+
+html,
+body {
+  scroll-behavior: smooth !important;
 }
 
 .primary_btn {
@@ -67,7 +78,15 @@
 }
 
 .nav_items:hover {
+  font-weight: bold;
+  transition: all;
+  transition-duration: 400ms;
+}
+
+.nav_clicked_class {
   cursor: pointer;
+  font-weight: bold;
+
   text-decoration: underline;
   text-underline-offset: 8px;
   text-decoration-thickness: 4px;
